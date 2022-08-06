@@ -1,11 +1,11 @@
 
-function HomeInfo() {
+function HomeHeadline() {
 
     return (
         <div className="flex h-full justify-center items-center text-white flex-col">
             <div className="ml-20">
             <div className="text-6xl font-normal w-3/4">
-                Reserve Your Event Spot
+                Supercharge Your Events
             </div>
             <div className="text-xs font-extralight mt-3">
                 Using blockchain technology, you can ensure peoples arrival to the event easily.
@@ -15,7 +15,7 @@ function HomeInfo() {
                     Get Started
                 </button>
             </div>
-            <div className="text-xs text-opacity-25 font-extralight text-gray-50 mt-20">
+            <div className="text-xs text-opacity-25 font-extralight text-red-200 mt-20">
                 TECHNOLOGIES USED
             </div>
             </div>
@@ -23,4 +23,4 @@ function HomeInfo() {
     )
 }
 
-export default HomeInfo;
+export default HomeHeadline;
