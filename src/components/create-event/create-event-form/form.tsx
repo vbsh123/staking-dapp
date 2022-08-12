@@ -1,7 +1,7 @@
 import { Formik, FormikHelpers, Form, Field } from 'formik';
 import DatePickerField from './date-picker-field';
 import { ToastContainer, toast } from 'react-toastify';
-import Notifier from '../../notifications/notify';
+import Notifier from '../../notifications/notifier';
 type EventProperties = {
     eventName: string,
     eventDate: Date,

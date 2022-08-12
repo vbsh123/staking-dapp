@@ -1,8 +1,10 @@
 import { ToastContainer } from "react-toastify";
+import './notifier.css';
 
 function Notifier() {
     return (
-        <ToastContainer 
+        <ToastContainer
+        progressClassName="toastProgress"
         position="top-left"
         autoClose={1200}
         hideProgressBar={false}
