@@ -3,6 +3,7 @@ import HomePage from "./components/home/home-page"
 import Navbar from "./components/layout/navbar"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css"
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 

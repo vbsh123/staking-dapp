@@ -1,6 +1,7 @@
 import { Formik, FormikHelpers, Form, Field } from 'formik';
 import DatePickerField from './date-picker-field';
-
+import { ToastContainer, toast } from 'react-toastify';
+import Notifier from '../../notifications/notify';
 type EventProperties = {
     eventName: string,
     eventDate: Date,
@@ -8,8 +9,12 @@ type EventProperties = {
 }
 
 function CreateEventForm() {
+    const notify = () => toast("Created Event!", {theme: "dark"});
+
     return (
+        
         <div className='w-full h-full flex flex-col items-center justify-center'>
+        <Notifier></Notifier>
         <Formik
           initialValues={{
             eventName: '',
@@ -20,7 +25,8 @@ function CreateEventForm() {
             values: EventProperties,
             { setSubmitting }: FormikHelpers<EventProperties>
           ) => {
-              alert(JSON.stringify(values))
+            notify()
+              //alert(JSON.stringify(values))
               setSubmitting(false);
           }}
         >
