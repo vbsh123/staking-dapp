@@ -4,6 +4,7 @@ import './notifier.css';
 function Notifier() {
     return (
         <ToastContainer
+        theme="dark"
         progressClassName="toastProgress"
         position="top-left"
         autoClose={1200}

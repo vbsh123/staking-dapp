@@ -6,7 +6,6 @@ import "react-datepicker/dist/react-datepicker.css"
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-
   return (
     <div className="flex w-full h-full flex-col">
       <Navbar />

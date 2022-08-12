@@ -9,7 +9,7 @@ type EventProperties = {
 }
 
 function CreateEventForm() {
-    const notify = () => toast("Created Event!", {theme: "dark"});
+    const notifyEventCreated = () => toast("Created Event!");
 
     return (
         
@@ -25,9 +25,8 @@ function CreateEventForm() {
             values: EventProperties,
             { setSubmitting }: FormikHelpers<EventProperties>
           ) => {
-            notify()
-              //alert(JSON.stringify(values))
-              setSubmitting(false);
+            notifyEventCreated()
+            setSubmitting(false);
           }}
         >
         {({ values, setFieldValue }) => (
