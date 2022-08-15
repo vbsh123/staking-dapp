@@ -11,7 +11,7 @@ contract EventManager {
         events.push(newEvent);
     } 
 
-    function isEventAlreadyExists(string memory eventName) public view returns (bool){
+    function isEventAlreadyExists(string memory eventName) private view returns (bool){
         for (uint i = 0; i < events.length; i++) {
             if (areStringsEqual(events[i].eventName(), eventName)) {return true;}
         }
