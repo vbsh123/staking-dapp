@@ -5,6 +5,7 @@ import Notifier from '../../notifications/notifier';
 type EventProperties = {
     eventName: string,
     eventDate: Date,
+    eventParticipationPrice: number,
     maximumParticipants: number,
 }
 
@@ -19,6 +20,7 @@ function CreateEventForm() {
           initialValues={{
             eventName: '',
             eventDate: new Date(),
+            eventParticipationPrice: 0,
             maximumParticipants: 10,
           }}
           onSubmit={(
@@ -26,11 +28,12 @@ function CreateEventForm() {
             { setSubmitting }: FormikHelpers<EventProperties>
           ) => {
             notifyEventCreated()
+            //send values to contract
             setSubmitting(false);
           }}
         >
         {({ values, setFieldValue }) => (
-          <Form className='flex flex-col justify-center items-center h-4/5 w-1/5'>
+          <Form className='flex flex-col justify-center items-center h-11/12 w-1/5'>
           <div className='bg-[#212121] border-2 border-red-200 text-white rounded-xl w-full h-full flex flex-col justify-center items-center'>
             <div className='text-3xl mb-5 text-white'>Create Event</div>
             <label htmlFor="Event Name" className='m-1 text-[#929292]'>Event Name</label>
@@ -38,7 +41,10 @@ function CreateEventForm() {
 
             <label htmlFor="Event Date" className='text-[#929292] m-1'>Event Date</label> 
             <DatePickerField name="eventDate" value={values.eventDate} onChange={setFieldValue}/> 
-            
+
+            <label htmlFor="Event Participation Price" className='text-[#929292] m-1'>Event Participation Price</label>
+            <Field name="eventParticipationPrice" className="text-white m-2 rounded-lg pl-1.5 border-red-200 border-2 bg-[#383838]" />
+
             <label htmlFor="Maximum Participants" className='text-[#929292] m-1'>Maximum Participants</label>
             <Field name="maximumParticipants" className="text-white m-2 rounded-lg pl-1.5 border-red-200 border-2 bg-[#383838] w-16 " /> 
             
