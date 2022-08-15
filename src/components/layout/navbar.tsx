@@ -15,7 +15,7 @@ function Navbar () {
 
             <div className="w-2/6 flex justify-between items-center px-14 text-sm">
                 <div className="cursor-pointer">
-                    Enter An Event
+                <a href="/event">Enter An Event</a>
                 </div>
                 <div className="cursor-pointer">
                     <a href="/create">Create Event</a>

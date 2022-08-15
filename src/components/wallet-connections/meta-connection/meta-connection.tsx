@@ -5,7 +5,12 @@ function MetamaskConnect() {
 
     const [account, setAccount] = useState<any>();
     const [balance, setBalance] = useState<any>();
-    const [isConnected, setIsConnected] = useState<boolean>(false);
+
+    useEffect(() => {
+        if(localStorage.getItem('isMetamaskConnected') === 'true') {
+            connectHandler();  
+        }
+    }, [])
 
     useEffect(() => {
         getBalance()
@@ -16,6 +21,7 @@ function MetamaskConnect() {
             try {
                 console.log('clicked')
                 const res = await window.ethereum.request({method: "eth_requestAccounts"})
+                localStorage.setItem('isMetamaskConnected', 'true');
                 setAccount(res[0])
             } catch(error) {
                 console.log(error);
